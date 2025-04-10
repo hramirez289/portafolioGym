@@ -1,0 +1,42 @@
+/* Clases */
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.class-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    border: 1px solid #333;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+}
+
+.class-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #333;
+}
+
+.class-content {
+    padding: 1.5rem;
+}
+
+.class-content h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.class-content p {
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
