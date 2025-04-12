@@ -1,42 +1,21 @@
-/* Clases */
-.class-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.class-card {
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s;
-    border: 1px solid #333;
+.entrena {
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    line-height: 1.1;
+    max-width: 600px;
 }
 
-.class-card:hover {
-    transform: translateY(-5px);
+.unete {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
 }
-
-.class-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #333;
-}
-
-.class-content {
-    padding: 1.5rem;
-}
-
-.class-content h3 {
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-}
-
-.class-content p {
-    color: var(--text-secondary);
-    line-height: 1.4;
-}
+    
