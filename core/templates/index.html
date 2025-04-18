@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="{% static 'styles.css' %}">
 
-  <title>Document</title>
+  <title>GymSync</title>
 
 </head>
 <body>
   <!--barra de navegacion-->
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper grey darken-2">
       <a href="#" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="sass.html">Sass</a></li>
@@ -23,14 +23,22 @@
     </div>
   </nav>
 
-  <div class="parallax-container">
-    <div>
-      <h1 class="entrena">ENTRENA COMO NUNCA ANTES</h1>
-      <p class="unete">Únete a la comunidad fitness más innovadora y exclusiva de la ciudad</p>
-      <button class="cta-button">Comienza tu viaje</button>
+  <!--contenido parallax-->
+  <div class="parallax-container full-height">
+    <div class="parallax" >
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=2500&q=80">
     </div>
-    <div class="parallax" ><img class="imag" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=2500&q=80"></div>
+    <div class="parallaxx">
+      <h1 class="entrena white-text center-align">ENTRENA COMO NUNCA ANTES</h1>
+      <h4 class="unete white-text center-align">Únete a la comunidad fitness más innovadora y exclusiva de la ciudad</h4>
+      <br>
+      <br>
+      <div class="center-align">
+        <a class="waves-effect waves-light btn-large red accent-3">COMIENZA TU VIAJE</a>
+     </div>
+    </div>
   </div>
+
   
 
   <!-- Sección Clases -->
@@ -136,11 +144,153 @@
         </li>
       </ul>
     </div>
-    
+</section>
 
+<section>
+  <section class="section">
+    <h1 class="center-align">Planes</h1>
+    <div class="container">
+      <div class="row">
+
+        <!-- Tarjeta 1 -->
+        <div class="col s12 m6 l4">
+          <div class="card green grey darken-2 white-text hoverable">
+            <div class="card-content">
+              <span class="card-title ">Plan Basico</span>
+              <h4>$15.000 <small>/mes</small></h4>
+              <ul>
+                <li>Acesso a sala de maquinas</li>
+                <li>Vestuarios</li>
+                <li>Asesoramiento inicial</li>
+                <br>
+              </ul>
+            </div>
+            <div class="card-action center-align">
+              <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Tarjeta 2 -->
+        <div class="col s12 m6 l4">
+          <div class="card green grey darken-2 white-text hoverable">
+            <div class="card-content">
+              <span class="card-title">Plan Premium</span>
+              <h4>$35.000 <small>/mes</small></h4>
+              <ul>
+                <li>Todo lo del plan básico</li>
+                <li>Clases grupales ilimitadas</li>
+                <li>Entrenador personal</li>
+                <li>Acceso a spa</li>
+              </ul>
+            </div>
+            <div class="card-action center-align">
+              <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col s12 m6 l4">
+          <div class="card green grey darken-2 white-text hoverable">
+            <div class="card-content">
+              <span class="card-title ">Plan Elite</span>
+              <h4>$55.000 <small>/mes</small></h4>
+              <ul>
+                <li>Todo lo del plan premium</li>
+                <li>Nutricionista personal</li>
+                <li>Acceso 24/7</li>
+                <li>Invitados gratis</li>
+              </ul>
+            </div>
+            <div class="card-action center-align">
+              <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="col s12 m6 l4">
+          <div class="card green grey darken-2 white-text hoverable">
+            <div class="card-content">
+              <span class="card-title">Entrenamiento Funcional</span>
+              <h4>$8.000 <small>/clase</small></h4>
+              <ul>
+                <li>60 minutos de entrenamiento</li>
+                <li>Instructor especializado</li>
+                <li>Equipamiento incluido</li>
+              </ul>
+            </div>
+            <div class="card-action center-align">
+              <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Tarjeta 5 -->
+          <div class="col s12 m6 l4">
+            <div class="card green grey darken-2 white-text hoverable">
+              <div class="card-content">
+                <span class="card-title ">Yoga</span>
+                <h4>$7.000 <small>/clase</small></h4>
+                <ul>
+                  <li>60 minutos de practica</li>
+                  <li>Mat de yoga incluido</li>
+                  <li>Instructor certificado</li>
+                </ul>
+              </div>
+              <div class="card-action center-align">
+                <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 6 -->
+          <div class="col s12 m6 l4">
+            <div class="card green grey darken-2 white-text hoverable">
+              <div class="card-content">
+                <span class="card-title bold-text">CrossFit</span>
+                <h4 class="bold-text">$10.000 <small>/clase</small></h4>
+                <ul>
+                  <li>60 minutos de clases </li>
+                  <li>Coach especializado</li>
+                  <li>Equipamiento completo</li>
+                </ul>
+              </div>
+              <div class="card-action center-align">
+                <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4">
+            <div class="card green grey darken-2 white-text hoverable">
+              <div class="card-content">
+                <span class="card-title ">Spinning</span>
+                <h4>$8.000 <small>/clase</small></h4>
+                <ul>
+                  <li>45 minutos de cardio</li>
+                  <li>Bicicleta asignada</li>
+                  <li>Instructor Certificado</li>
+                </ul>
+              </div>
+              <div class="card-action center-align">
+                <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+              </div>
+            </div>
+         </div>
+      </div>
+      <div>
+          
+      </div>
+
+    </div>
   </section>
+  
+</section>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script>
