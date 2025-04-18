@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <link rel="stylesheet" href="{% static 'core/styles.css' %}">
 
   <title>GymSync</title>
 
@@ -16,9 +16,11 @@
     <div class="nav-wrapper grey darken-2">
       <a href="#" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <li><a href="sass.html">Inicio</a></li>
+        <li><a href="badges.html">Clases</a></li>
+        <li><a href="collapsible.html">Planes</a></li>
+        <li><a href="collapsible.html">Contacto</a></li>
+        <li><a class="waves-effect waves-light btn-large red accent-3">Registro</a></li>
       </ul>
     </div>
   </nav>
@@ -285,12 +287,32 @@
       </div>
 
     </div>
-  </section>
-  
 </section>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<footer class="page-footer black">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m4">
+        <h5 class="red-text text-accent-3">Horario</h5>
+        <p>Lun-Vie: 6:00 - 22:00</p>
+        <p>Sáb-Dom: 8:00 - 20:00</p>
+      </div>
+      <div class="col s12 m4">
+        <h5 class="red-text text-accent-3">Síguenos</h5>
+        <a href="#" class="white-text">Facebook</a><br>
+        <a href="#" class="white-text">Instagram</a><br>
+        <a href="#" class="white-text">Twitter</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2025 GymSync
+      <a href="#!" class="grey-text text-lighten-4 right">Términos y Condiciones</a>
+    </div>
+  </div>
+</footer>
+  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script>
@@ -307,8 +329,6 @@
   })
 
 </script>
-
-  
 
 </body>
 </html>
