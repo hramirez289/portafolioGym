@@ -1,3 +1,7 @@
+.parallax-container {
+    height: 100vh;
+}
+
 /* Footer */
 footer {
     background-color: black;
