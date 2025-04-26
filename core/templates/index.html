@@ -19,7 +19,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="sass.html">Inicio</a></li>
           <li><a href="badges.html">Clases</a></li>
-          <li><a href="collapsible.html">Planes</a></li>
+          <li><a href="#plans">Planes</a></li>
           <li><a href="collapsible.html">Contacto</a></li>
           <li><a class="waves-effect waves-light btn-small red accent-3 modal-trigger" href="#modalRegistro">Registro</a></li>
         </ul>
@@ -28,29 +28,43 @@
   </div>  
 
   <!-- Modal -->
-<div id="modalRegistro" class="modal">
-  <div class="modal-content">
-    <h4>Registro</h4>
-    <form>
-      <div class="input-field">
-        <input id="nombre" type="text" class="validate" required>
-        <label for="nombre">Nombre</label>
+  <div id="modalRegistro" class="modal">
+    <div class="modal-content" style="padding: 2rem;">
+      <div class="center-align">
+        <h4 class="grey-text text-darken-2">Registro</h4>
       </div>
-      <div class="input-field">
-        <input id="correo" type="email" class="validate" required>
-        <label for="correo">Correo</label>
-      </div>
-      <div class="input-field">
-        <input id="contraseña" type="password" class="validate" required>
-        <label for="contraseña">Contraseña</label>
-      </div>
-    </form>
+      
+      <form class="section">
+        <div class="input-field">
+          <input id="nombre3" type="text" class="validate" required>
+          <label for="nombre3">Nombre</label>
+        </div>
+        
+        <div class="input-field">
+          <input id="contraseña3" type="password" class="validate" required>
+          <label for="contraseña3">contraseña</label>
+        </div>
+        
+        <div class="input-field">
+          <label>
+            <input type="checkbox" class="filled-in">
+            <span>Recordar mis datos</span>
+          </label>
+        </div>
+        
+        <div class="input-field center-align">
+          <button class="btn waves-effect waves-light btn-large z-depth-0 blue-grey" 
+                  type="submit" style="width: 100%;">
+            Continuar
+          </button>
+        </div>
+        
+        <p class="center-align">
+          ¿Nuevo aca?<a href="/registro" class="blue-grey-text"> Crear cuenta</a>
+        </p>
+      </form>
+    </div>
   </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
-    <a href="#!" class="waves-effect waves-green btn">Registrarse</a>
-  </div>
-</div>
 
 
   <!--contenido parallax-->
@@ -64,7 +78,7 @@
       <br>
       <br>
       <div class="center-align">
-        <a class="waves-effect waves-light btn-large red accent-3">COMIENZA TU VIAJE</a>
+        <a class="waves-effect waves-light btn-large red accent-3"><b>COMIENZA TU VIAJE</b></a>
      </div>
     </div>
   </div>
@@ -177,7 +191,7 @@
 </section>
 
 <section>
-  <section class="section">
+  <section id="plans" class="section">
     <h1 class="center-align">Planes</h1>
     <div class="container">
       <div class="row">
