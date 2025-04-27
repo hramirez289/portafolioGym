@@ -15,12 +15,12 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper grey darken-4">
-        <a href="#" class="brand-logo">Logo</a>
+        <img src="{% static 'images/logogym.png' %}" alt="" style="width: 220px; max-height: 60px;">
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Inicio</a></li>
+          <li><a href="{% url 'index' %}">Inicio</a></li>
           <li><a href="badges.html">Clases</a></li>
           <li><a href="#plans">Planes</a></li>
-          <li><a href="collapsible.html">Contacto</a></li>
+          <li><a href="{% url 'contacto' %}">Contacto</a></li>
           <li><a class="waves-effect waves-light btn-small red accent-3 modal-trigger" href="#modalRegistro">Registro</a></li>
         </ul>
       </div>
@@ -30,8 +30,8 @@
   <!-- Modal -->
   <div id="modalRegistro" class="modal z-depth-3" style="border-radius: 10px;">
     <div class="modal-content">
-      <h4 class="center-align">Crear Cuenta</h4>
-
+      <h4 class="center-align">Inicias sesion</h4>
+      
         <form id="registrationForm">
 
           <div class="input-field">
@@ -64,6 +64,9 @@
 
         </form>
 
+        <p class="center-align" style="margin-top: 25px;">
+          ¿No tienes cuenta? <a href="{% url 'registro' %}" class="blue-text text-darken-2">Registrate aquí</a>
+        </p>
       </div>
     </div>
   </div>
