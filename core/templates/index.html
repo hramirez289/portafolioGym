@@ -1,0 +1,364 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+
+  <title>GymSync</title>
+
+</head>
+<body>
+  <!--barra de navegacion-->
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper grey darken-4">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Inicio</a></li>
+          <li><a href="badges.html">Clases</a></li>
+          <li><a href="collapsible.html">Planes</a></li>
+          <li><a href="collapsible.html">Contacto</a></li>
+          <li><a class="waves-effect waves-light btn-small red accent-3 modal-trigger" href="#modalRegistro">Tu espacio</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>  
+
+  <!-- Modal -->
+<div id="modalRegistro" class="modal">
+  <div class="modal-content">
+    <h4>Registro</h4>
+    <form>
+      <div class="input-field">
+        <input id="nombre" type="text" class="validate" required>
+        <label for="nombre">Nombre</label>
+      </div>
+      <div class="input-field">
+        <input id="correo" type="email" class="validate" required>
+        <label for="correo">Correo</label>
+      </div>
+      <div class="input-field">
+        <input id="contraseña" type="password" class="validate" required>
+        <label for="contraseña">Contraseña</label>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+    <a href="#!" class="waves-effect waves-green btn">Registrarse</a>
+  </div>
+</div>
+
+
+  <!--contenido parallax-->
+  <div class="parallax-container">
+    <div class="parallax" >
+      <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?q=80&w=1988&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    </div>
+    <div class="parallaxx">
+      <h1 class="entrena white-text center-align"><b>ENTRENA COMO NUNCA ANTES</b></h1>
+      <h5 class="unete white-text center-align">Únete a la comunidad fitness más innovadora y exclusiva de la ciudad</h5>
+      <br>
+      <br>
+      <div class="center-align">
+        <a class="waves-effect waves-light btn-large red accent-3">COMIENZA TU VIAJE</a>
+     </div>
+    </div>
+  </div>
+
+  
+
+  <!-- Sección Clases -->
+
+  <section class="section">
+    <div class="container">
+      <h4 class="center-align">Nuestras Clases</h4>
+      <div class="row">
+        
+        <!-- Tarjeta 1: Entrenamiento Funcional -->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Entrenamiento Funcional">
+              <span class="card-title">Funcional</span>
+            </div>
+            <div class="card-content">
+              <p>Mejora tu movilidad, fuerza y coordinación con rutinas variadas de entrenamiento funcional.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Tarjeta 2: Crossfit -->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Crossfit">
+              <span class="card-title">Crossfit</span>
+            </div>
+            <div class="card-content">
+              <p>Entrenamiento de alta intensidad que combina levantamiento, cardio y fuerza.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Tarjeta 3: Yoga -->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Yoga">
+              <span class="card-title">Yoga</span>
+            </div>
+            <div class="card-content">
+              <p>Relájate, mejora tu flexibilidad y encuentra tu equilibrio físico y mental.</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Tarjeta 4: spinning -->
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://images.unsplash.com/photo-1637633716870-3460aa785ff4?q=80&w=2070&h=1305&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Spinning">
+              <span class="card-title">Spinning</span>
+            </div>
+            <div class="card-content">
+              <p>Ejercicio completo de bajo impacto que mejora la resistencia cardiovascular y el tono muscular.</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="slider">
+      <ul class="slides">
+        <li>
+          <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"> <!-- random image -->
+          <div class="caption center-align">
+            <h3>Equipamiento moderno  </h3>
+            <h5 class="light grey-text text-lighten-3">La ultima tecnologia en maquinas de ejercicios</h5>
+          </div>
+        </li>
+        <li>
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"> <!-- random image -->
+          <div class="caption left-align">
+            <h3>Area de peso libre</h3>
+            <h5 class="light grey-text text-lighten-3">Amplio espacio que pesas y barras</h5>
+          </div>
+        </li>
+        <li>
+          <img src="https://images.unsplash.com/photo-1598290068762-8a427fd42e7e?q=80&w=1350&h=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> <!-- random image -->
+          <div class="caption right-align">
+            <h3>Area de spinning</h3>
+            <h5 class="light grey-text text-lighten-3">Zona especializada para clases de cycling</h5>
+          </div>
+        </li>
+        <li>
+          <img src="https://images.unsplash.com/photo-1536922246289-88c42f957773?q=80&w=1350&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> <!-- random image -->
+          <div class="caption center-align">
+            <h3>Area de crossfit  </h3>
+            <h5 class="light grey-text text-lighten-3">Espacio equipado para entrenamiento funcional y crossfit</h5>
+          </div>
+        </li>
+        <li>
+          <img src="https://mercadofitness.com/wp-content/uploads/2020/07/gimnasio.jpg"> <!-- random image -->
+          <div class="caption center-align">
+            <h3>Vestuario de lujo</h3>
+            <h5 class="light grey-text text-lighten-3">Comodidad y privacidad garantizada</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+</section>
+
+<section>
+  <section class="section">
+    <h1 class="center-align">Planes</h1>
+    <div class="container">
+      <div class="row">
+
+        <!-- Tarjeta 1 -->
+        <div class="col s12 m6 l4">
+          <div class="card green grey darken-2 white-text hoverable">
+            <div class="card-content">
+              <span class="card-title ">Plan Basico</span>
+              <h4>$15.000 <small>/mes</small></h4>
+              <ul>
+                <li>Acesso a sala de maquinas</li>
+                <li>Vestuarios</li>
+                <li>Asesoramiento inicial</li>
+                <br>
+              </ul>
+            </div>
+            <div class="card-action center-align">
+              <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Tarjeta 2 -->
+        <div class="col s12 m6 l4">
+          <div class="card green grey darken-2 white-text hoverable">
+            <div class="card-content">
+              <span class="card-title">Plan Premium</span>
+              <h4>$35.000 <small>/mes</small></h4>
+              <ul>
+                <li>Todo lo del plan básico</li>
+                <li>Clases grupales ilimitadas</li>
+                <li>Entrenador personal</li>
+                <li>Acceso a spa</li>
+              </ul>
+            </div>
+            <div class="card-action center-align">
+              <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col s12 m6 l4">
+          <div class="card green grey darken-2 white-text hoverable">
+            <div class="card-content">
+              <span class="card-title ">Plan Elite</span>
+              <h4>$55.000 <small>/mes</small></h4>
+              <ul>
+                <li>Todo lo del plan premium</li>
+                <li>Nutricionista personal</li>
+                <li>Acceso 24/7</li>
+                <li>Invitados gratis</li>
+              </ul>
+            </div>
+            <div class="card-action center-align">
+              <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="col s12 m6 l4">
+          <div class="card green grey darken-2 white-text hoverable">
+            <div class="card-content">
+              <span class="card-title">Entrenamiento Funcional</span>
+              <h4>$8.000 <small>/clase</small></h4>
+              <ul>
+                <li>60 minutos de entrenamiento</li>
+                <li>Instructor especializado</li>
+                <li>Equipamiento incluido</li>
+              </ul>
+            </div>
+            <div class="card-action center-align">
+              <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Tarjeta 5 -->
+          <div class="col s12 m6 l4">
+            <div class="card green grey darken-2 white-text hoverable">
+              <div class="card-content">
+                <span class="card-title ">Yoga</span>
+                <h4>$7.000 <small>/clase</small></h4>
+                <ul>
+                  <li>60 minutos de practica</li>
+                  <li>Mat de yoga incluido</li>
+                  <li>Instructor certificado</li>
+                </ul>
+              </div>
+              <div class="card-action center-align">
+                <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta 6 -->
+          <div class="col s12 m6 l4">
+            <div class="card green grey darken-2 white-text hoverable">
+              <div class="card-content">
+                <span class="card-title bold-text">CrossFit</span>
+                <h4 class="bold-text">$10.000 <small>/clase</small></h4>
+                <ul>
+                  <li>60 minutos de clases </li>
+                  <li>Coach especializado</li>
+                  <li>Equipamiento completo</li>
+                </ul>
+              </div>
+              <div class="card-action center-align">
+                <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4">
+            <div class="card green grey darken-2 white-text hoverable">
+              <div class="card-content">
+                <span class="card-title ">Spinning</span>
+                <h4>$8.000 <small>/clase</small></h4>
+                <ul>
+                  <li>45 minutos de cardio</li>
+                  <li>Bicicleta asignada</li>
+                  <li>Instructor Certificado</li>
+                </ul>
+              </div>
+              <div class="card-action center-align">
+                <a class="btn red accent-3 waves-effect waves-light">Seleccionar</a>
+              </div>
+            </div>
+         </div>
+      </div>
+      <div>
+          
+      </div>
+
+    </div>
+</section>
+
+<footer class="page-footer black">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m4">
+        <h5 class="red-text text-accent-3">Horario</h5>
+        <p>Lun-Vie: 6:00 - 22:00</p>
+        <p>Sáb-Dom: 8:00 - 20:00</p>
+      </div>
+      <div class="col s12 m4">
+        <h5 class="red-text text-accent-3">Síguenos</h5>
+        <a href="#" class="white-text">Facebook</a><br>
+        <a href="#" class="white-text">Instagram</a><br>
+        <a href="#" class="white-text">Twitter</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2025 GymSync
+      <a href="#!" class="grey-text text-lighten-4 right">Términos y Condiciones</a>
+    </div>
+  </div>
+</footer>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.parallax');
+  var instances = M.Parallax.init(elems);
+  var elems2 = document.querySelectorAll('.slider');
+  var instances2 = M.Slider.init(elems2,{
+    indicators: true,
+    height: 650,
+    duratin: 1000,
+    interval: 6000,
+   });
+  var elems3 = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems3);
+  })
+
+</script>
+
+</body>
+</html>
