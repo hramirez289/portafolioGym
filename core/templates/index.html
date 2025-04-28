@@ -5,12 +5,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
 
   <title>GymSync</title>
 
 </head>
 <body>
+
+  {% if messages %}
+  <div class="container">
+    {% for message in messages %}
+      <div class="card-panel green lighten-4 green-text text-darken-4 center-align">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
   <!--barra de navegacion-->
   <div class="navbar-fixed">
     <nav>
@@ -67,7 +79,7 @@
 
 
   <!--contenido parallax-->
-  <div class="parallax-container" id="inicio"> 
+  
 
 
   <div id="modalRegistro" class="modal z-depth-3" style="border-radius: 10px;">
@@ -115,7 +127,8 @@
 
 
   <!--contenido parallax-->
-  <div class="parallax-container">
+  <div class="parallax-container" id="inicio"> 
+    
 
     <div class="parallax" >
       <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?q=80&w=1988&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
@@ -436,6 +449,14 @@
   var instances = M.Modal.init(elems3);
   })
 
+</script>
+<script>
+  setTimeout(function() {
+    var messageCard = document.querySelector('.card-panel');
+    if (messageCard) {
+      messageCard.style.display = 'none';
+    }
+  }, 2000); // 2000 milisegundos = 2 segundos
 </script>
 
 </body>
