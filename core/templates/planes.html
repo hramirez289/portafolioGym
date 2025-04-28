@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selecciona tu Plan</title>
+</head>
+<body>
+
+  <div class="container">
+    <h3 class="center-align">Formulario de Inscripción</h3>
+    <h5 class="center-align">Plan Seleccionado: <b>{{ plan }}</b></h5>
+    <h6 class="center-align">Valor: <b>${{ precio|floatformat:0 }}</b></h6>
+
+    <form method="POST">
+      {% csrf_token %}
+      <div class="input-field">
+        <input id="rut" type="text" name="rut" required>
+        <label for="rut">RUT</label>
+      </div>
+
+      <div class="input-field">
+        <input id="nombre" type="text" name="nombre" required>
+        <label for="nombre">Nombre Completo</label>
+      </div>
+
+      <div class="input-field">
+        <input id="email" type="email" name="email" required>
+        <label for="email">Email</label>
+      </div>
+
+      <div class="input-field">
+        <input id="telefono" type="text" name="telefono" required>
+        <label for="telefono">Teléfono</label>
+      </div>
+
+      <div class="input-field">
+        <input id="fecha_nacimiento" type="date" name="fecha_nacimiento" required>
+        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+      </div>
+
+      <div class="input-field">
+        <select name="sexo" required>
+          <option value="" disabled selected>Seleccione</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <label>Sexo</label>
+      </div>
+
+      <div class="input-field">
+        <select name="metodo_pago" required>
+          <option value="" disabled selected>Seleccione</option>
+          <option value="Efectivo">Efectivo</option>
+          <option value="Tarjeta">Tarjeta de Crédito/Débito</option>
+          <option value="Transferencia">Transferencia Bancaria</option>
+        </select>
+        <label>Método de Pago</label>
+      </div>
+
+      <div class="center-align">
+        <button class="btn waves-effect waves-light red accent-3" type="submit">Enviar</button>
+      </div>
+    </form>
+
+  </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+</script>
+</body>
+</html>
