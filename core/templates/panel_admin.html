@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Administración</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+<div class="container">
+  <h3 class="center-align">Panel de Administración</h3>
+
+  <!-- Tarjeta de Contratos -->
+  <div class="card blue-grey darken-1 white-text">
+    <div class="card-content center-align">
+      <span class="card-title">Total de Contratos</span>
+      <h4>{{ total_contratos }}</h4>
+    </div>
+  </div>
+
+  <!-- Tarjeta de Monto Total -->
+  <div class="card red accent-3 white-text">
+    <div class="card-content center-align">
+      <span class="card-title">Monto Total Acumulado</span>
+      <h4>${{ total_monto }}</h4>
+    </div>
+  </div>
+
+  <div class="center-align">
+    <a href="{% url 'index' %}" class="btn black">Volver al inicio</a>
+  </div>
+</div>
+
+</body>
+</html>

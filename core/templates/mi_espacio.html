@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Espacio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+<div class="container">
+  <h3 class="center-align">¡Bienvenido/a, {{ contrato.nombre_completo }}!</h3>
+  <h5 class="center-align">Este es tu plan contratado:</h5>
+
+  <!-- Recuadro Rojo: Información Personal -->
+  <div class="card red accent-3 white-text">
+    <div class="card-content">
+      <span class="card-title">{{ contrato.plan }}</span>
+      <p>Precio: ${{ contrato.precio }}</p>
+      <p>RUT: {{ contrato.rut }}</p>
+      <p>Email: {{ contrato.email }}</p>
+      <p>Teléfono: {{ contrato.telefono }}</p>
+      <p>Fecha de nacimiento: {{ contrato.fecha_nacimiento }}</p>
+      <p>Método de pago: {{ contrato.metodo_pago }}</p>
+    </div>
+  </div>
+
+  <!-- Recuadro Negro: Fechas -->
+  <div class="card black white-text">
+    <div class="card-content">
+      <p><b>Fecha de inicio:</b> {{ fecha_inicio|date:"d/m/Y" }}</p>
+      <p><b>Fecha de término:</b> {{ fecha_termino|date:"d/m/Y" }}</p>
+    </div>
+  </div>
+
+  <div class="center-align">
+    <a href="{% url 'index' %}" class="btn red accent-3">Volver al inicio</a>
+  </div>
+</div>
+
+</body>
+</html>
