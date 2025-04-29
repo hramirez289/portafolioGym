@@ -4,32 +4,204 @@
   <meta charset="UTF-8">
   <title>Panel de Administración</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  {% load static %}
 </head>
 <body>
 
 <div class="container">
+
+  <!-- Logo -->
+  <div class="center-align" style="margin-top: 20px;">
+    <img src="{% static 'images/logogym.png' %}" alt="Logo GymSync" style="width: 200px; max-height: 80px;">
+  </div>
+
   <h3 class="center-align">Panel de Administración</h3>
 
-  <!-- Tarjeta de Contratos -->
-  <div class="card blue-grey darken-1 white-text">
-    <div class="card-content center-align">
-      <span class="card-title">Total de Contratos</span>
-      <h4>{{ total_contratos }}</h4>
+  <!-- Primera fila: Contratos, Monto, Gráfico -->
+  <div class="row">
+
+    <!-- Tarjeta Total Contratos -->
+    <div class="col s12 m4">
+      <div class="card blue-grey darken-1 white-text">
+        <div class="card-content center-align">
+          <span class="card-title">Total de Contratos</span>
+          <h4>{{ total_contratos }}</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta Monto Acumulado -->
+    <div class="col s12 m4">
+      <div class="card red accent-3 white-text">
+        <div class="card-content center-align">
+          <span class="card-title">Monto Total Acumulado</span>
+          <h4>${{ total_monto }}</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gráfico de Contratos -->
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title center-align">Gráfico Contratos por Mes</span>
+          <canvas id="contratosChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tabla Contratos por mes debajo -->
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title center-align">Contratos por Mes</span>
+          <table class="striped centered">
+            <thead>
+              <tr>
+                <th>Mes</th>
+                <th>Total de Contratos</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in contratos_por_mes %}
+                <tr>
+                  <td>{{ item.mes|date:"F Y" }}</td>
+                  <td>{{ item.total }}</td>
+                </tr>
+              {% empty %}
+                <tr><td colspan="2">No hay contratos registrados aún.</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Tarjeta de Monto Total -->
-  <div class="card red accent-3 white-text">
-    <div class="card-content center-align">
-      <span class="card-title">Monto Total Acumulado</span>
-      <h4>${{ total_monto }}</h4>
+  <!-- Segunda fila: Formulario y Cursos Registrados -->
+  <div class="row">
+
+    <!-- Formulario Agregar Curso -->
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Agregar Nuevo Curso</span>
+          <form method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+              <input type="text" name="nombre" id="nombre" required>
+              <label for="nombre">Nombre del curso</label>
+            </div>
+            <div class="input-field">
+              <input type="text" name="dia" id="dia" placeholder="Ej: lunes" required>
+              <label for="dia">Día</label>
+            </div>
+            <div class="input-field">
+              <input type="time" name="hora" id="hora" required>
+              <label for="hora">Hora</label>
+            </div>
+            <div class="input-field">
+              <input type="text" name="profesor" id="profesor">
+              <label for="profesor">Profesor</label>
+            </div>
+            <div class="input-field">
+              <input type="number" name="duracion" id="duracion" value="60">
+              <label for="duracion">Duración (minutos)</label>
+            </div>
+            <div class="center-align">
+              <button type="submit" class="btn red accent-3">Agregar Curso</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+
+    <!-- Cursos Registrados -->
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Cursos Registrados</span>
+          <table class="striped centered">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Día</th>
+                <th>Hora</th>
+                <th>Profesor</th>
+                <th>Duración</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for curso in cursos %}
+                <tr>
+                  <td>{{ curso.nombre }}</td>
+                  <td>{{ curso.dia }}</td>
+                  <td>{{ curso.hora|time:"H:i" }}</td>
+                  <td>{{ curso.profesor }}</td>
+                  <td>{{ curso.duracion_minutos }} min</td>
+                  <td>
+                    <a class="btn-small blue" href="{% url 'editar_curso' curso.id %}">Editar</a>
+                    <a class="btn-small red" href="{% url 'eliminar_curso' curso.id %}">Eliminar</a>
+                  </td>
+                </tr>
+              {% empty %}
+                <tr><td colspan="6" class="center-align">No hay cursos registrados.</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="center-align">
+  <div class="center-align" style="margin-bottom: 40px;">
     <a href="{% url 'index' %}" class="btn black">Volver al inicio</a>
   </div>
+
 </div>
+
+<!-- Script del gráfico -->
+<script>
+const ctx = document.getElementById('contratosChart').getContext('2d');
+
+const contratosChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: [
+      {% for item in contratos_por_mes %}
+        "{{ item.mes|date:"F Y" }}",
+      {% endfor %}
+    ],
+    datasets: [{
+      label: 'Contratos por Mes',
+      data: [
+        {% for item in contratos_por_mes %}
+          {{ item.total }},
+        {% endfor %}
+      ],
+      backgroundColor: 'rgba(255, 99, 132, 0.6)',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          stepSize: 1
+        }
+      }
+    }
+  }
+});
+</script>
 
 </body>
 </html>

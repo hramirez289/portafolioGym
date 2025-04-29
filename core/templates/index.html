@@ -1,4 +1,6 @@
 {% load static%}
+{% load dict_utils %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -400,6 +402,56 @@
       </div>
 
     </div>
+<!--horario-->
+<section class="section">
+  <div class="container">
+    <h4 class="center-align">Horario Semanal de Clases</h4>
+    <div class="responsive-table">
+      <table class="striped centered">
+        <thead>
+          <tr>
+            <th>Hora</th>
+            {% for i in dias_semana %}
+              <th>{{ i }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for hora in horas_disponibles %}
+            <tr>
+              <td><strong>{{ hora }}</strong></td>
+              {% for dia in dias_semana %}
+                <td>
+                  {% with dia_clave=dia|lower|cut:"á"|cut:"é"|cut:"í"|cut:"ó"|cut:"ú"|cut:"Á"|cut:"É"|cut:"Í"|cut:"Ó"|cut:"Ú" %}
+                    {% with dia_cursos=horario|dict_get:hora|dict_get:dia_clave %}
+
+                      {% if dia_cursos %}
+                        {% for curso in dia_cursos %}
+                          <div>
+                            <b>{{ curso.nombre }}</b><br>
+                            <small>{{ curso.profesor }}</small><br>
+                            <small>{{ curso.duracion_minutos }} min</small>
+                          </div>
+                          <hr>
+                        {% endfor %}
+                      {% else %}
+                        <small>-</small>
+                      {% endif %}
+                    {% endwith %}
+                  {% endwith %}
+                </td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<!--horario fin-->
+
+
+
 </section>
 
 

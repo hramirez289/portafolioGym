@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Curso</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body class="container">
+  <h4 class="center-align">Editar Curso</h4>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="input-field">
+      <input type="text" name="nombre" value="{{ curso.nombre }}" required>
+      <label class="active">Nombre del Curso</label>
+    </div>
+    <div class="input-field">
+      <input type="text" name="profesor" value="{{ curso.profesor }}" required>
+      <label class="active">Profesor</label>
+    </div>
+    <div class="input-field">
+      <input type="text" name="dia" value="{{ curso.dia }}" required>
+      <label class="active">Día</label>
+    </div>
+    <div class="input-field">
+      <input type="time" name="hora" value="{{ curso.hora|time:'H:i' }}" required>
+      <label class="active">Hora</label>
+    </div>
+    <div class="input-field">
+      <input type="number" name="duracion_minutos" value="{{ curso.duracion_minutos }}" required>
+      <label class="active">Duración (minutos)</label>
+    </div>
+    <button class="btn red accent-3" type="submit">Guardar cambios</button>
+    <a href="{% url 'panel_admin' %}" class="btn grey">Cancelar</a>
+  </form>
+</body>
+</html>
